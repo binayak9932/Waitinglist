@@ -76,11 +76,11 @@
   <script src="assets/js/main.js"></script>
 
   <script>
+   const form = document.getElementById('myForm');
    function handleSubmit(e) {
+    e.preventDefault();
 
-  e.preventDefault();
-
-  const form = document.getElementById('myForm');
+ 
   const formData = new FormData(form);
 
   fetch('https://script.google.com/macros/s/...', {
@@ -94,6 +94,7 @@
   })
   .catch(error => {
     console.log(error);
+    
   });
 
 }
