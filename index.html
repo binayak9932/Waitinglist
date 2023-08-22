@@ -76,24 +76,27 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    function handleSubmit(e) {
-      e.preventDefault();
+   function handleSubmit(e) {
 
-      const form = document.getElementById('myForm');
-      const formData = new FormData(form);
+  e.preventDefault();
 
-      fetch('https://script.google.com/macros/s/AKfycbxfi01kW0oJKzwoOlT8cft28Fl23Gm5tk4AnDodmehTv_QPt01Qiq7z5iwazEFOOZ1v3g/exec', {
-        method: 'POST',
-        body: formData
-      })
-        .then(res => res.json())
-        .then(data => {
-          console.log(data);
-          window.location.reload();
-        })
-        .catch(error => {
-          console.log(error);
-        });
+  const form = document.getElementById('myForm');
+  const formData = new FormData(form);
+
+  fetch('https://script.google.com/macros/s/...', {
+    method: 'POST',
+    body: formData
+  })
+  .then(res => res.json())
+  .then(data => {
+    console.log(data);
+    window.location.reload(); // reload page
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+}
       
      
     }
